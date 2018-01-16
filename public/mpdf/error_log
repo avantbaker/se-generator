@@ -1,0 +1,4 @@
+[20-Jul-2016 16:22:48 America/Chicago] PHP Warning:  file_put_contents(/mpdf/tmp/sommmmem.gif): failed to open stream: No such file or directory in /home/vertserv/public_html/host/sportsengine/mpdf/gif_process.php on line 13
+[20-Jul-2016 16:36:45 America/Chicago] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/vertserv/public_html/host/sportsengine/mpdf/gif_process.php on line 13
+[20-Jul-2016 16:37:39 America/Chicago] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/vertserv/public_html/host/sportsengine/mpdf/gif_process.php on line 13
+[21-Jul-2016 10:37:05 America/Chicago] PHP Warning:  file_put_contents(gifs/AUi3nBzvZo.gif): failed to open stream: Permission denied in /home/vertserv/public_html/host/sportsengine/mpdf/gif_process.php on line 15

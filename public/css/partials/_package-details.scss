@@ -1,0 +1,379 @@
+//////////////////////////////////////
+// SE Sponsor Package Details Styles
+////////////////////////////////////
+
+/* found in AllPackages.js, PackageDetails.js, PackageDetailItem.js */
+
+.package-details-view {
+	text-align: left;
+
+	.downloads-section-heading {
+		padding-bottom: 10px;
+
+		.step-number {
+			display: inline-block;
+			margin: 0;
+			font-weight: 400;
+
+			span {
+				display: inline-block;
+				padding: 6px 12px;
+				margin-right: 6px;
+				color: #fff;
+				background: $blue;
+				transform: translate(-10px, -2px);
+				-webkit-transform: translate(-10px, -2px);
+
+				@include mobile {
+					transform: translate(-10px, -10px);
+					-webkit-transform: translate(-10px, -10px);
+				}
+			}
+		}
+
+		h3 {
+			display: inline-block;
+
+			@include mobile {
+				width: 100%;
+			}
+		}
+	}
+
+	.detail-header {
+
+		.all-packages-link {
+			text-align: left;
+			border-bottom: 1px solid $ltgray;
+			padding: 0 10px 10px;
+
+			a {
+				@include back-link;
+			}
+		}
+
+		.all-packages-heading-wrapper {
+			position: relative;
+
+			span {
+				position: absolute;
+				top: 25px;
+				left: 15px;
+				font-size: 28px;
+			}
+
+			h2 {
+				padding: 25px 0 0 55px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.step-container {
+		background-color: $light;
+		padding: 30px;
+		margin: 10px 0 15px 0;
+		border-top: 3px solid $blue;
+		@include transition(background-color .3s);
+
+		@include desktop {
+
+			&:hover {
+				background-color: $blueishhover;
+			}
+		}
+
+		@include desktop-small {
+			max-width: 100%;
+		}
+
+		@include mobile {
+			padding: 20px;
+		}
+	}
+
+	.ad-listing-wrapper {
+		float: left;
+		width: calc(100% - 380px);
+		padding-left: 0;
+
+		@include vertical {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+
+// Form elements styles
+
+.package-detail-item {
+	display: block;
+	margin: 12px 0;
+
+	.detail-name {
+		display: block;
+		float: left;
+		width: calc(100% - 130px);
+
+		@include mobile {
+			width: 100%;
+		}
+
+		.detail-name-wrapper {
+			@extend %clearfix;
+			padding-bottom: 20px;
+
+			@include mobile {
+				padding-bottom: 8px;
+			}
+
+			.detail-name-container {
+				float: left;
+				width: 100%;
+
+				@include mobile {
+					float: none;
+				}
+
+				.detail-name-text {
+
+					h4 {
+						margin-bottom: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	.detail-options {
+		display: block;
+		float: left;
+		width: 130px;
+
+		@include mobile {
+			float: none;
+			display: inline-block;
+			width: 100%;
+			padding: 0 0 20px 40px;
+		}
+
+		.detail-options-wrapper {
+			width: 100%;
+			text-align: right;
+
+			@include mobile {
+				text-align: left;
+			}
+		}
+
+/*
+		.detail-options-content {
+			display: table-cell;
+			vertical-align: middle;
+
+			@include mobile {
+				display: block;
+			}
+		}
+*/
+
+		.amount-input {
+			width: 95px;
+
+			@include mobile {
+				width: calc(100% - 15px);
+				margin: 0;
+			}
+		}
+
+		span {
+			display: inline-block;
+			width: 12px;
+			margin-right: 2px;
+			transform: translateY(-7px);
+			-webkit-transform: translateY(-7px);
+		}
+	}
+}
+
+.billing-frequency-wrapper {
+	@extend %clearfix;
+	padding: 10px 0;
+	border-bottom: 1px solid $ltgray;
+	margin-bottom: 25px;
+
+	.billing-description {
+		display: inline-block;
+
+		p {
+			margin-bottom: 8px;
+		}
+	}
+
+	.billing-input-wrapper {
+		float: right;
+
+		@include mobile {
+			float: none;
+			padding-bottom: 10px;
+		}
+
+		select {
+			width: 120px;
+
+			@include mobile {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+// Ad Visualization Styles
+
+.ad-visualization-wrapper {
+	float: left;
+	width: 380px;
+	padding-left: 30px;
+
+	@include vertical {
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.revenue-display {
+		@extend %clearfix;
+		margin-top: 25px;
+
+		@include vertical {
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px solid $ltgray;
+		}
+
+		@include mobile {
+			margin-top: 0;
+		}
+
+		h6 {
+			display: inline-block;
+			float: left;
+			margin-top: 15px;
+			padding-left: 4px;
+		}
+
+		.total-revenue {
+			float: right;
+
+			.dollar-sign {
+				font-size: 15px;
+				display: inline-block;
+				transform: translateY(-13px);
+			}
+
+			.revenue {
+				@include font-size(36px);
+				font-family: $heading-font;
+				font-weight: 300;
+			}
+
+			.year-sign {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+$browser-radius: 6px;
+
+.ad-display {
+	position: relative;
+	width: 100%;
+	height: 275px;
+	background: #fff;
+	border-radius: $browser-radius;
+	box-shadow: 0 2px 20px rgba(150,158,166,0.35);
+	overflow: hidden;
+
+	&:before {
+		content:"";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 18px;
+		background: #c4c9cd url('../images/browser-top.svg') no-repeat 10px center;
+		border-top-left-radius: $browser-radius;
+		border-top-right-radius: $browser-radius;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	@include vertical {
+		display: none;
+	}
+
+	.box {
+		position: absolute;
+		background-color: tint($blue, 85%);
+		background-image: url('../images/se-sponsor-check-small.svg');
+		background-repeat: no-repeat;
+		background-position: center -100%;
+		background-size: 20px;
+		@include transition(background .2s);
+
+		&.banner-ad {
+			left: 10%;
+			top: 15%;
+			width: 80%;
+			height: 38px;
+		}
+
+		&.cta-ad {
+			height: 65px;
+			width: 23%;
+			top: 35%;
+
+			&.one {
+				left: 10%;
+			}
+
+			&.two {
+				left: 38%;
+			}
+
+			&.three {
+				left: 67%;
+			}
+		}
+
+		&.sidebar-ad {
+			width: 15%;
+			height: 40px;
+			left: 10%;
+			top: 63.5%;
+		}
+
+		&.active {
+			background-position: center center;
+			background-color: $blue;
+		}
+	}
+}
+
+.email-display,
+.registration-display {
+	position: relative;
+	width: 100%;
+	height: 275px;
+
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+
+

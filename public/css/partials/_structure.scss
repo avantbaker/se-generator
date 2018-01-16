@@ -1,0 +1,59 @@
+// /////////////////////////////////////////
+// SportsEngine Pay It Forward Structure
+// ////////////////////////////////////////
+
+
+// Variables
+
+$body-font: 'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
+$section-tb-padding: 100px;
+$section-rl-padding: 45px;
+$section-tb-padding-mobile: 60px;
+$section-rl-padding-mobile: 25px;
+
+
+// Underlying Page Structure
+
+body, html {
+	margin: 0;
+	font-family: $body-font;
+	color: $black;
+
+	&.no-scroll {
+		position: fixed;
+		width: 100%;
+	}
+}
+
+header, section, footer {
+	width: 100%;
+
+	&.white {
+		background: #fff;
+	}
+
+	&.light {
+		background: $light;
+	}
+
+	&.blue {
+		background: $blue;
+		color: #fff;
+	}
+
+	&.border-bottom{
+	    border-bottom: 1px solid $grayborder;
+	}
+
+	&.border-top{
+	    border-top: 1px solid $grayborder;
+	}
+
+	&.padded-section {
+		padding: $section-tb-padding $section-rl-padding;
+
+		@include mobile {
+			padding: $section-tb-padding-mobile $section-rl-padding-mobile;
+		}
+	}
+}

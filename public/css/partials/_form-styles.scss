@@ -1,0 +1,452 @@
+// /////////////////////////////////////
+// SportsEngine Form Styles
+// ////////////////////////////////////
+
+
+// 1. Variables
+
+$field-height: 36px;
+$button-height: 46px;
+$form-field-gray: #a7b1b7;
+
+
+// 2. Form Layout
+
+form {
+	@extend %clearfix;
+}
+
+.form-row {
+	@extend %clearfix;
+}
+
+.field-wrapper {
+	position: relative;
+	float: left;
+    width: 50%;
+    padding-top: 8px;
+    padding-bottom: 16px;
+
+	@include form-flip {
+		width: 100%;
+	}
+
+	&.left-field {
+		padding-right: 8px;
+	}
+
+	&.right-field {
+		padding-left: 8px;
+	}
+
+	&.left-field,
+	&.right-field {
+
+		@include form-flip {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	&.full-width-field,
+	&.button-wrapper,
+	&.checkbox {
+		width: 100%;
+		float: none;
+	}
+
+    &.button-wrapper {
+	    padding: 20px 0 0 0;
+    }
+
+    &.checkbox {
+	   padding: 0 0 0 40px;
+    }
+}
+
+.form-section {
+	@extend %clearfix;
+
+	&:not(:first-of-type) {
+		padding-top: 20px;
+	}
+
+	&:not(:last-of-type) {
+		padding-bottom: 10px;
+		border-bottom: 1px solid $ltgray;
+	}
+}
+
+.form-divider {
+	background: $ltgray;
+	margin: 15px 0 30px 0;
+}
+
+.form-sub {
+	@include font-size(16px);
+	font-weight: 500;
+	padding-top: 8px;
+	margin: 0 0 15px 0;
+}
+
+// 3. Form Elements
+
+input, label, select {
+	display: inline-block;
+	width: 100%;
+	-webkit-appearance: none;
+}
+
+label {
+	padding-bottom: 5px;
+	@include font-size(12px);
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+input[type=text],
+input[type=url],
+input[type=email],
+input[type=tel],
+input[type=number],
+input[type=date],
+select,
+textarea {
+	height: $field-height;
+	padding: 0 8px;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	border-bottom: 2px solid $form-field-gray;
+	background-color: $offwhite;
+	@include font-size(16px);
+	font-weight: 400;
+	border-radius: 0;
+	@include transition(all .2s);
+
+	&:hover {
+		background-color: #fff;
+		border-bottom: 2px solid $black;
+	}
+
+	&:focus {
+		background-color: #fff;
+		border-bottom: 2px solid $blue;
+		outline: 0;
+	}
+}
+
+select {
+	width: 100%;
+	padding-right: 28px;
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-image: url('../images/icon-dropdown_default.svg');
+
+	&:hover {
+		background-image: url('../images/icon-dropdown_hover.svg');
+	}
+
+	&:focus {
+		background-image: url('../images/icon-dropdown_focus.svg');
+	}
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+textarea {
+	padding: 8px;
+	width: 100%;
+	height: 72px;
+	line-height: 1.5;
+}
+
+
+// Checkboxes
+
+label, input, textarea {
+	-webkit-appearance: none;
+}
+
+.radio-label {
+	width: 30px;
+	display: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	position: absolute;
+	top: -4px;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	@include font-size(15px);
+	font-weight: bold;
+	color: $blue;
+	line-height: 29px;
+	background-color: #fff;
+	border: 2px solid $mdgray;
+	border-radius: 50%;
+	box-shadow: 0 2px 3px rgba(31,32,33,0);
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	@include transition(all .2s);
+
+	&:hover {
+		border: 2px solid $black;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:checked {
+		border: 2px solid $green;
+		background-color: $green;
+		color: #fff;
+		@include bubble-shadow;
+		outline: 0;
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	background-image: url('../images/se-sponsor-check-small.svg');
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+// Buttons
+
+input[type=submit],
+button,
+.button {
+	display: inline-block;
+	width: 100%;
+	max-width: 240px;
+	height: $button-height;
+	line-height: $button-height;
+	padding: 0 16px;
+	@include font-size(15px);
+	font-weight: 500;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	border: 2px solid $green;
+	background: $green;
+	box-shadow: 0 2px 0 rgba(35,40,43,0.15);
+	border-radius: 4px;
+	transition: all .2s;
+	-webkit-appearance: none;
+	cursor: pointer;
+
+	&:focus {
+		outline: 0;
+	}
+
+	@include landscape {
+		&:hover {
+			border: 2px solid shade($green,25%);
+			background: shade($green,25%);
+			color: #fff;
+		}
+	}
+
+	@include vertical {
+
+		&:hover {
+			color: #fff;
+		}
+
+		&:focus {
+			border: 2px solid shade($green,25%);
+			background: shade($green,25%);
+			color: #fff;
+		}
+	}
+
+	&.white-outline {
+		background: transparent;
+		border: 2px solid #fff;
+		box-shadow: none;
+
+		@include landscape {
+			&:hover {
+				border: 2px solid $greenhover;
+				background: $greenhover;
+				color: #fff;
+			}
+		}
+
+		@include vertical {
+			&:hover {
+				color: #fff;
+			}
+
+			&:focus {
+				border: 2px solid $greenhover;
+				background: $greenhover;
+				color: #fff;
+			}
+		}
+	}
+
+	&.green-outline {
+		background: transparent;
+		border: 2px solid $green;
+		color: $green;
+		box-shadow: none;
+
+		@include landscape {
+			&:hover {
+				border: 2px solid $greenhover;
+				background: $greenhover;
+				color: #fff;
+			}
+		}
+
+		@include vertical {
+			&:focus {
+				border: 2px solid $greenhover;
+				background: $greenhover;
+				color: #fff;
+			}
+		}
+	}
+
+	&.max-width-large {
+		max-width: 320px;
+	}
+
+	&.full-width {
+		max-width: none;
+		width: 100%;
+	}
+
+	&.no-max-width {
+		max-width: none;
+		width: 180px;
+	}
+
+	span[class*=" icon-"],
+	span[class^="icon-"] {
+		display: inline-block;
+		margin-right: 6px;
+		transform: translateY(1px);
+	}
+}
+
+button.secondary-cta,
+a.secondary-cta {
+	@include secondary-cta;
+	cursor: pointer;
+}
+
+
+// Required Fields
+.form-wrapper.required {
+	label {
+		&:after {
+			content:"*";
+			display: inline-block;
+			color: $red;
+			margin-left: 2px;
+		}
+	}
+}
+
+// Error Messages
+.error-message {
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	bottom: 15px;
+	@include font-size(10px);
+	font-style: italic;
+	color: $red;
+	transform: translate(0,-10px);
+	-webkit-transform: translate(0,-10px);
+	z-index: -1;
+	@include opacity(0);
+	@include transition (all .3s ease-out);
+
+	&.error-message-right {
+		padding-left: 6px;
+		@include mobile {
+			padding-left: 0;
+		}
+	}
+}
+
+.right-field {
+
+	.error-message {
+		@include landscape {
+			padding-left: 8px;
+		}
+			}
+}
+.field-wrapper.error {
+	height: auto;
+	padding-bottom: 30px;
+	.error-message {
+		transform: translate(0,0);
+		-webkit-transform: translate(0,0);
+		@include opacity(1);
+		z-index: 1;
+	}
+
+	input[type="text"],
+	input[type="number"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="date"],
+	input[type=url],
+	textarea,
+	select {
+		border-bottom: 2px solid $red;
+		background-color: #fff;
+		&:hover,
+		&:focus {
+			border-bottom: 2px solid $red;
+		}
+	}
+	select {
+		background-image: url('../images/icon-dropdown-error.svg');
+	}
+}
+
+
+
+.no-svg .gen-formfield.error,
+.no-svg .gen-formfield.field-check.error {
+	select {
+		background-image: url('../images/icon-dropdown-error.png');
+	}
+}
+
+
+/// Disabled styles
+
+input:disabled, select:disabled, .disabled {
+	opacity: .45;
+}
+
+input:disabled, select:disabled {
+	&:hover,
+	&:focus {
+		border-bottom: 2px solid $mdgray;
+	}
+}
+
+button.disabled,
+.button.disabled {
+	background: $mdgray !important;
+	border: 2px solid $mdgray !important;
+	opacity: 0.7;
+}

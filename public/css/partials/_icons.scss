@@ -1,0 +1,442 @@
+// /////////////////////////////////////
+// SPORTSENGINE ICONS
+// ////////////////////////////////////
+
+// 1. Variables
+
+$icomoon-font-path: "../fonts" !default;
+$icon-checkmark-big: "\e936";
+$icon-checkmark-small: "\e937";
+$icon-saved-items-big: "\e934";
+$icon-search-big: "\e935";
+$icon-chat-big: "\e92c";
+$icon-email-big-alternate: "\e92d";
+$icon-edit-small: "\e92e";
+$icon-edit-big: "\e92f";
+$icon-quote-small: "\e930";
+$icon-file-pdf-big: "\e931";
+$icon-file-excel-big: "\e932";
+$icon-file-doc-big: "\e933";
+$icon-administrator-big: "\e900";
+$icon-arrow-left-big: "\e901";
+$icon-arrow-left-small: "\e902";
+$icon-arrow-right-big: "\e903";
+$icon-arrow-right-small: "\e904";
+$icon-baseball-big: "\e905";
+$icon-baseball-jersey-big: "\e906";
+$icon-basketball-big: "\e907";
+$icon-basketball-hoop-big: "\e908";
+$icon-close-big: "\e909";
+$icon-close-small: "\e90a";
+$icon-coach-big: "\e90b";
+$icon-download-small: "\e90c";
+$icon-dropdown-big: "\e90d";
+$icon-dropdown-small: "\e90e";
+$icon-email-big: "\e90f";
+$icon-email-small: "\e910";
+$icon-file-quote-big: "\e911";
+$icon-file-small: "\e912";
+$icon-football-big: "\e913";
+$icon-football-helmet-big: "\e914";
+$icon-football-jersey-big: "\e915";
+$icon-hockey-big: "\e916";
+$icon-league: "\e917";
+$icon-location-big: "\e918";
+$icon-location-small: "\e919";
+$icon-medal-big: "\e91a";
+$icon-minus-big: "\e91b";
+$icon-minus-small: "\e91c";
+$icon-plus-big: "\e91d";
+$icon-plus-small: "\e91e";
+$icon-powerpay: "\e91f";
+$icon-quote-big: "\e920";
+$icon-registration: "\e921";
+$icon-rsvp-big: "\e922";
+$icon-share-small: "\e923";
+$icon-sitebuilder: "\e924";
+$icon-soccer-big: "\e925";
+$icon-team: "\e926";
+$icon-texting-big: "\e927";
+$icon-tourney: "\e928";
+$icon-verify: "\e929";
+$icon-volleyball-big: "\e92a";
+$icon-website-big: "\e92b";
+$icon-share2: "\ea82";
+$icon-google-plus: "\ea8b";
+$icon-facebook: "\ea90";
+$icon-twitter: "\ea96";
+$icon-youtube: "\ea9d";
+$icon-linkedin2: "\eaca";
+
+
+// 2. Styling
+
+@font-face {
+  font-family: 'seicons';
+  src:  url('#{$icomoon-font-path}/seicons.eot?4qtr7i');
+  src:  url('#{$icomoon-font-path}/seicons.eot?4qtr7i#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/seicons.woff?4qtr7i') format('woff'),
+    url('#{$icomoon-font-path}/seicons.ttf?4qtr7i') format('truetype'),
+    url('#{$icomoon-font-path}/seicons.svg?4qtr7i#seicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'seicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-checkmark-big {
+  &:before {
+    content: $icon-checkmark-big;
+  }
+}
+.icon-checkmark-small {
+  &:before {
+    content: $icon-checkmark-small;
+  }
+}
+.icon-saved-items-big {
+  &:before {
+    content: $icon-saved-items-big;
+  }
+}
+.icon-search-big {
+  &:before {
+    content: $icon-search-big;
+  }
+}
+.icon-chat-big {
+  &:before {
+    content: $icon-chat-big;
+  }
+}
+.icon-email-big-alternate {
+  &:before {
+    content: $icon-email-big-alternate;
+  }
+}
+.icon-edit-small {
+  &:before {
+    content: $icon-edit-small;
+  }
+}
+.icon-edit-big {
+  &:before {
+    content: $icon-edit-big;
+  }
+}
+.icon-quote-small {
+  &:before {
+    content: $icon-quote-small;
+  }
+}
+.icon-file-pdf-big {
+  &:before {
+    content: $icon-file-pdf-big;
+  }
+}
+.icon-file-excel-big {
+  &:before {
+    content: $icon-file-excel-big;
+  }
+}
+.icon-file-doc-big {
+  &:before {
+    content: $icon-file-doc-big;
+  }
+}
+
+.icon-administrator-big {
+  &:before {
+    content: $icon-administrator-big;
+  }
+}
+.icon-arrow-left-big {
+  &:before {
+    content: $icon-arrow-left-big;
+  }
+}
+.icon-arrow-left-small {
+  &:before {
+    content: $icon-arrow-left-small;
+  }
+}
+.icon-arrow-right-big {
+  &:before {
+    content: $icon-arrow-right-big;
+  }
+}
+.icon-arrow-right-small {
+  &:before {
+    content: $icon-arrow-right-small;
+  }
+}
+.icon-baseball-big {
+  &:before {
+    content: $icon-baseball-big;
+  }
+}
+.icon-baseball-jersey-big {
+  &:before {
+    content: $icon-baseball-jersey-big;
+  }
+}
+.icon-basketball-big {
+  &:before {
+    content: $icon-basketball-big;
+  }
+}
+.icon-basketball-hoop-big {
+  &:before {
+    content: $icon-basketball-hoop-big;
+  }
+}
+.icon-close-big {
+  &:before {
+    content: $icon-close-big;
+  }
+}
+.icon-close-small {
+  &:before {
+    content: $icon-close-small;
+  }
+}
+.icon-coach-big {
+  &:before {
+    content: $icon-coach-big;
+  }
+}
+.icon-download-small {
+  &:before {
+    content: $icon-download-small;
+  }
+}
+.icon-dropdown-big {
+  &:before {
+    content: $icon-dropdown-big;
+  }
+}
+.icon-dropdown-small {
+  &:before {
+    content: $icon-dropdown-small;
+  }
+}
+.icon-email-big {
+  &:before {
+    content: $icon-email-big;
+  }
+}
+.icon-email-small {
+  &:before {
+    content: $icon-email-small;
+  }
+}
+.icon-file-quote-big {
+  &:before {
+    content: $icon-file-quote-big;
+  }
+}
+.icon-file-small {
+  &:before {
+    content: $icon-file-small;
+  }
+}
+.icon-football-big {
+  &:before {
+    content: $icon-football-big;
+  }
+}
+.icon-football-helmet-big {
+  &:before {
+    content: $icon-football-helmet-big;
+  }
+}
+.icon-football-jersey-big {
+  &:before {
+    content: $icon-football-jersey-big;
+  }
+}
+.icon-hockey-big {
+  &:before {
+    content: $icon-hockey-big;
+  }
+}
+.icon-league {
+  &:before {
+    content: $icon-league;
+  }
+}
+.icon-location-big {
+  &:before {
+    content: $icon-location-big;
+  }
+}
+.icon-location-small {
+  &:before {
+    content: $icon-location-small;
+  }
+}
+.icon-medal-big {
+  &:before {
+    content: $icon-medal-big;
+  }
+}
+.icon-minus-big {
+  &:before {
+    content: $icon-minus-big;
+  }
+}
+.icon-minus-small {
+  &:before {
+    content: $icon-minus-small;
+  }
+}
+.icon-plus-big {
+  &:before {
+    content: $icon-plus-big;
+  }
+}
+.icon-plus-small {
+  &:before {
+    content: $icon-plus-small;
+  }
+}
+.icon-powerpay {
+  &:before {
+    content: $icon-powerpay;
+  }
+}
+.icon-quote-big {
+  &:before {
+    content: $icon-quote-big;
+  }
+}
+.icon-registration {
+  &:before {
+    content: $icon-registration;
+  }
+}
+.icon-rsvp-big {
+  &:before {
+    content: $icon-rsvp-big;
+  }
+}
+.icon-share-small {
+  &:before {
+    content: $icon-share-small;
+  }
+}
+.icon-sitebuilder {
+  &:before {
+    content: $icon-sitebuilder;
+  }
+}
+.icon-soccer-big {
+  &:before {
+    content: $icon-soccer-big;
+  }
+}
+.icon-team {
+  &:before {
+    content: $icon-team;
+  }
+}
+.icon-texting-big {
+  &:before {
+    content: $icon-texting-big;
+  }
+}
+.icon-tourney {
+  &:before {
+    content: $icon-tourney;
+  }
+}
+.icon-verify {
+  &:before {
+    content: $icon-verify;
+  }
+}
+.icon-volleyball-big {
+  &:before {
+    content: $icon-volleyball-big;
+  }
+}
+.icon-website-big {
+  &:before {
+    content: $icon-website-big;
+  }
+}
+.icon-share2 {
+  &:before {
+    content: $icon-share2;
+  }
+}
+.icon-google-plus {
+  &:before {
+    content: $icon-google-plus;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
+}
+.icon-linkedin2 {
+  &:before {
+    content: $icon-linkedin2;
+  }
+}
+
+// Icon bubble
+
+$symbol-bubble-large: 85px;
+$symbol-bubble-small: 45px;
+
+.symbol-bubble {
+	background-color: #fff;
+	border-radius: 50%;
+	width: $symbol-bubble-large;
+	height: $symbol-bubble-large;
+	font-size: 46px;
+	line-height: $symbol-bubble-large;
+	margin: 0 auto;
+	color: $black;
+	text-align: center;
+
+	&.gray-bubble {
+		background-color: $light;
+
+		&:hover {
+			background-color: #fff;
+		}
+	}
+
+	&.smaller {
+		width: $symbol-bubble-small;
+		height: $symbol-bubble-small;
+		line-height: $symbol-bubble-small;
+		font-size: 18px;
+	}
+}
+

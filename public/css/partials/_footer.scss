@@ -1,0 +1,221 @@
+////////////////////////////////////////
+// SE Sponsor Footer Styles
+///////////////////////////////////////
+
+/* found in Footer.js */
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 500px;
+	background: rgba(0,0,0,0.1);
+	border-top: 1px solid rgba(0,0,0,0.1);
+  	box-shadow: 0 -1px 1px rgba(0,0,0,0.1);
+  	z-index: 1001;
+  	-webkit-backface-visibility: hidden;
+  	transform: translate3d(0,450px,0);
+  	-webkit-transform: translate3d(0,450px,0);
+  	-ms-transform: translate3d(0,450px,0);
+  	@include transition(transform .4s);
+}
+
+.footer-main-container {
+	@extend %clearfix;
+	background: $dkgray;
+	width: 100%;
+}
+
+.footer-content-container {
+	@extend %clearfix;
+	background: #fff;
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+}
+
+.footer-section-wrapper {
+	@extend %clearfix;
+	float: left;
+	width: calc(100% - 50px);
+
+	@include mobile {
+		width: 100%;
+	}
+}
+
+.footer-section-content {
+	float: left;
+	width: 50%;
+}
+
+.footer-section {
+	display: table;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	background-color: transparent;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	@include transition(all .2s);
+	cursor: pointer;
+
+	&:hover {
+		background-color: shade($blue,10%);
+
+		> .footer-heading {
+			color: #fff;
+		}
+	}
+
+	.mobile-view {
+		@include mobile {
+			display: none;
+		}
+	}
+
+	&.active-section {
+		background-color: #fff;
+		border-bottom: 1px solid #fff;
+
+		.footer-heading {
+			color: $blue;
+		}
+	}
+
+	.footer-heading {
+		display: table-cell;
+		vertical-align: middle;
+		text-transform: uppercase;
+		color: $ltgray;
+		@include font-size(15px);
+		font-weight: 500;
+		@include transition(color .2s);
+
+		@include desktop-small {
+			@include font-size(14px);
+		}
+
+		.footer-symbol {
+			display: inline-block;
+			font-size: 18px;
+			transform: translateY(2px);
+			margin-right: 4px;
+		}
+
+		&.left {
+			border-right: 1px solid rgba(0,0,0,0.1);
+			border-collapse: separate;
+		}
+	}
+}
+
+.footer-button {
+	float: left;
+	width: 50px;
+	height: 50px;
+	background-color: $dkblue;
+	cursor: pointer;
+	@include transition(all .25s);
+
+	@include landscape {
+
+		&:hover {
+			background-color: shade($blue, 10%);
+		}
+	}
+
+	@include vertical {
+
+		&:focus {
+			background-color: shade($blue, 10%);
+		}
+	}
+
+	@include mobile {
+		display: none;
+	}
+
+	.footer-button-wrapper {
+		display: table;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+	}
+
+	span {
+		display: table-cell;
+		vertical-align: middle;
+		color: #fff;
+		font-size: 12px;
+		@include transition(all .3s);
+		transform: rotate(-180deg);
+
+		&.animate {
+			transform: rotate(0deg);
+		}
+	}
+}
+
+
+.option-wrapper {
+
+	.symbol-bubble {
+		position: relative;
+
+		&.active {
+			background-color: $mdgray;
+		}
+	}
+}
+
+.saved-indicator {
+	position: absolute;
+	top: 0px;
+	right: 1px;
+	line-height: 15px !important;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	background-color: $orange;
+	color: #fff;
+	font-size: 8px !important;
+	font-weight: 500;
+
+	&.hide {
+		display: none;
+	}
+}
+
+// Expanded Styles
+
+.content-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include background-opacity($mdgray, 0.8);
+	z-index: 1000;
+	@include animation(fade-in .35s ease-out);
+}
+
+.display-overlay {
+
+	.content-overlay {
+		display: block;
+	}
+
+	footer {
+		transform: translate3d(0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+
+		.find-sponsor-wrapper {
+			opacity: 1;
+		}
+	}
+}
+
+
+/* end Footer.js */

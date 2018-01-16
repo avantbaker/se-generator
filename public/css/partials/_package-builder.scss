@@ -1,0 +1,48 @@
+/////////////////////////////////////////
+// SE Sponsor Package Builder Styles
+////////////////////////////////////////
+
+/* found in PackageBuilder.js */
+
+.package-builder-section {
+	background-color: #fff;
+	padding: 0 $section-rl-padding;
+	
+	@include desktop-small {
+		padding: 0 16px;
+	}
+
+	.package-builder-container {
+		position: relative;
+		width: 90%;
+		max-width: 1060px;
+		padding: 0 48px 60px 48px;
+		background-color: #fff;
+		text-align: center;
+		
+		@include desktop-small {
+			padding: 0 0 60px 0;
+		}
+
+		@include mobile {
+			width: 100%;
+			padding: 32px 0;
+		}
+	}
+
+	.package-builder-heading {
+		padding-bottom: 32px;
+
+		@include mobile {
+			padding-bottom: 12px;
+		}
+		
+		.intro {
+			@include mobile {
+				@include font-size(16px);
+			}
+		}
+	}
+}
+
+/* end PackageBuilder.js */

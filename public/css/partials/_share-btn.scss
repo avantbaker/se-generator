@@ -1,0 +1,166 @@
+////////////////////////////////////
+// SE Sponsor Share Links Section
+///////////////////////////////////
+
+/* found in App.js */
+
+.sponsor-share-wrapper {
+	position: fixed;
+	top: 50vh;
+	left: 0;
+	transform: translateY(-87%);
+	-webkit-transform: translateY(-87%);
+	z-index: 999;
+	
+	@media all and (min-width: 900px) and (max-height: 800px ) {
+		top: 225px;
+		overflow: hidden;
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+	}
+	
+	@media all and (min-width: 900px) and (min-height: 840px ) {
+		transform: translateY(-124px);
+		-webkit-transform: translateY(-124px);
+	}
+	
+	@include vertical {
+		left: initial;
+		bottom: initial;
+		top: 395px;
+		right: 0;
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+	}
+	
+	@include mobile {
+		top: 234px;
+	}
+
+	.sponsor-share-inner {
+		position: relative;
+		width: 80px;
+		height: 200px;
+		
+		@include desktop-small {
+			width: 58px;
+		}
+		
+		@include vertical {
+			height: 150px;
+		}
+
+		.sponsor-share-link {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			text-align: center;
+			transition: all .3s;
+
+			&.share-active {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			&.facebook {
+				bottom: 100px;
+				z-index: 1;
+				
+				@media all and (min-width: 900px) and (min-height: 840px ) {
+					bottom: 155px;
+				}
+				
+				&.share-inactive {
+					opacity: 0;
+					transform: translateY(120px);
+				}
+			}
+
+			&.twitter {
+				bottom: 50px;
+				z-index: 2;
+				transition-delay: .05s;
+				
+				@media all and (min-width: 900px) and (min-height: 840px ) {
+					bottom: 105px;
+				}
+				
+				&.share-inactive {
+					opacity: 0;
+					transform: translateY(60px);
+				}
+			}
+
+			&.share {
+				height: 45px;
+				bottom: 0;
+				z-index: 3;
+				
+				@media all and (min-width: 900px) and (min-height: 840px ) {
+					height: 100px;
+				}
+				
+				@include vertical {
+					height: auto;
+				}
+
+				.share-text {
+					display: inline-block;
+					@include font-size(11px);
+					text-transform: uppercase;
+					cursor: pointer;
+					transform: rotate(-90deg) translate(-25px,-5px);
+					transform-origin: top center;
+					
+					@media all and (min-width: 900px) and (max-height: 840px ) {
+						display: none;
+					}
+					
+					@include vertical {
+						display: none;
+					}
+				}
+			}
+
+			.symbol-bubble {
+				display: inline-block;
+				@include bubble-shadow;
+				@include transition(all .2s);
+				cursor: pointer;
+				
+				&.share {
+					background-color: $orange;
+					border: 2px solid $orange;
+					color: #fff;
+					
+					&:hover {
+						background-color: shade($orange,20%);
+						border: 2px solid shade($orange,20%);
+					}
+				}
+
+				&.facebook {
+					background-color: #fff;
+					border: 2px solid $facebook;
+					color: $facebook;
+
+					&:hover {
+						background-color: $facebook;
+						color: #fff;
+					}
+				}
+
+				&.twitter {
+					background-color: #fff;
+					border: 2px solid $twitter;
+					color: $twitter;
+
+					&:hover {
+						background-color: $twitter;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}

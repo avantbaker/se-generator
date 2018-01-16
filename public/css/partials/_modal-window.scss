@@ -1,0 +1,230 @@
+///////////////////////////////////////
+// SE Sponsor App Modal Window Styles
+//////////////////////////////////////
+
+$modal-width: 480px;
+$dialog-width: 420px;
+$video-width: 800px;
+
+.whats-this-modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: $section-rl-padding-mobile;
+	min-height: 100vh;
+	@include background-opacity($mdgray, 0.7);
+	z-index: 100000;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-backface-visibility: hidden;
+
+	@include landscape {
+		overflow-x: hidden;
+		overflow-y: hidden;
+
+		&:hover {
+			overflow-y: auto;
+		}
+	}
+
+	@include mobile-medium {
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+    }
+}
+
+.modal-outer-centered {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-inner-centered {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modal-container {
+	position: relative;
+	width: 100%;
+	min-height: 490px;
+	margin: 0 auto;
+	max-width: $modal-width;
+	background: #fff;
+	border: 2px solid $ltgray;
+	z-index: 100002;
+	box-shadow: 0 10px 40px shade($mdgray,3.5%);
+	@include animation(modal-zoom .35s ease-out);
+
+
+    &.dialog-modal {
+	   max-width: $dialog-width;
+	   min-height: 0;
+	   padding-top: 25px;
+
+	   .modal-close {
+			top: 12px;
+			right: 12px;
+		}
+
+    }
+
+    &.video-modal {
+	   max-width: $video-width;
+    }
+
+    &.example-modal {
+	   min-height: 0;
+	   padding-top: 25px;
+
+	   .example-modal-content {
+		   padding: 16px;
+
+		   .button {
+		   		margin-top: 10px;
+		   }
+	   }
+
+	   .example-modal-image {
+		    position: relative;
+		    width: 100%;
+		    overflow: hidden;
+
+		    img {
+			    display: block;
+			    width: 100%;
+		    }
+	   }
+
+	   .modal-close {
+			top: 12px;
+			right: 12px;
+		}
+    }
+
+    .modal-content {
+		padding: 70px 30px 30px;
+
+		@include mobile {
+			padding: 70px 16px 16px;
+		}
+	}
+
+    .modal-close {
+		display: block;
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		@include font-size(18px);
+		color: $black;
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		@include transition(transform .3s);
+		cursor: pointer;
+
+		@include landscape {
+
+			&:hover {
+				transform: rotate(-90deg);
+				-webkit-transform: rotate(-90deg);
+			}
+		}
+
+		@include vertical {
+
+			&:focus {
+				transform: rotate(-90deg);
+				-webkit-transform: rotate(-90deg);
+			}
+		}
+	}
+}
+
+
+// Whats This Modal Styles
+
+.modal-header {
+	border-bottom: 2px solid $ltgray;
+	text-align: left;
+	padding: 10px;
+
+	.symbol-bubble {
+		display: inline-block;
+		height: 48px;
+		width: 48px;
+		margin-right: 8px;
+		font-size: 25px;
+		line-height: 48px;
+		background-color: #fff;
+		color: $mdgray;
+		@include transition(all .2s ease);
+		cursor: pointer;
+		-webkit-backface-visibility: hidden;
+
+		@include landscape {
+
+			&:hover {
+				background-color: $blueishhover;
+				color: $black;
+			}
+		}
+
+		@include vertical {
+
+			&:focus {
+				background-color: $blueishhover;
+				color: $black;
+			}
+		}
+
+		&.active {
+			background-color: $blue;
+			color: #fff;
+
+			@include landscape {
+
+				&:hover {
+					background-color: shade($blue,20%);
+				}
+			}
+
+			@include vertical {
+
+				&:focus {
+					background-color: shade($blue,20%);
+				}
+			}
+		}
+	}
+}
+
+.whats-this-modal-content {
+
+	.modal-text-wrapper {
+		padding: 24px;
+
+		@include mobile {
+			padding: 24px 0;
+		}
+	}
+
+	.modal-hero {
+		width: 100%;
+		max-width: 360px;
+		height: 240px;
+		margin: 0 auto 15px auto;
+		text-align: center;
+
+		img {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}
+
+
+

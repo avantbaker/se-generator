@@ -1,0 +1,30 @@
+
+// REACT transitions styling
+
+/// fade transition
+
+/* starting state of animation */
+.fade-enter {
+  opacity: 0.01;
+  transform: translate3d(0,15%,0);
+  -webkit-transform: translate3d(0,15%,0);
+}
+
+/* end state of animation */
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transition: opacity .3s ease, transform .35s ease-out;
+}
+
+/* start of exit animation */
+.fade-leave {
+  opacity: 1;
+}
+
+/* end state of exit animation */
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity .3s ease;
+}

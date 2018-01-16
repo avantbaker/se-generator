@@ -1,0 +1,119 @@
+//////////////////////////////////
+// SE Download Section
+/////////////////////////////////
+
+
+/* found in PackageDetails.js, DownloadEditable.js, DownloadPdf.js, DownloadEmail.js */
+
+.downloads-section-heading {
+	
+	.download-heading-description {
+		padding-top: 20px;
+		
+		@include mobile {
+			padding-top: 8px;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid $ltgray;
+		}
+		
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.download-item-wrapper {
+	@extend %clearfix;
+	padding: 15px 0;
+	
+	&:first-of-type {
+		border-top: 1px solid $ltgray;
+	}
+	
+	&:not(:last-of-type) {
+		border-bottom: 1px solid $ltgray;
+	}
+
+	.download-description-wrapper {
+		float: left;
+		position: relative;
+		width: calc(100% - 380px);
+		
+		@include vertical {
+			width: 100%;
+			float: none;
+		}
+		
+		p { 
+			margin: 0;
+		}
+	}
+
+	.download-description {
+		padding: 0 30px 0 60px;
+		
+		@include vertical {
+			padding: 60px 0 0 0;
+			max-width: 620px;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+	
+	.download-symbol {
+		display: block;
+		position: absolute;
+		top: -4px;
+		left: 0;
+		width: 50px;
+		height: 50px;
+		font-size: 24px;
+		text-align: center;
+		line-height: 48px;
+		background: #fff;
+		border-radius: 50%;
+		color: $black;
+		@include bubble-shadow;
+		
+		@include vertical {
+			top: 0;
+			left: 50%;
+			margin-left: -24px;
+		}
+	}
+
+	.download-btns-wrapper {
+		width: 100%;
+		
+		@include landscape {
+			float: left;
+			text-align: right;
+			width: 380px;
+		}
+		
+		@include vertical {
+			padding: 10px 0 20px 0;
+			text-align: center;
+			
+		}
+
+		.button, button {
+			
+			@include mobile {
+				width: 100%;
+				max-width: none;
+				margin-bottom: 10px;
+			}
+			
+			&:last-of-type {
+				margin-left: 8px;
+
+				@include mobile {
+					margin-right: 0;
+				}
+			}
+			
+		}
+	}
+}

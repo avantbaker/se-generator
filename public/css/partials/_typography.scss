@@ -1,0 +1,307 @@
+// //////////////////////////
+// SportsEngine Typography
+// //////////////////////////
+
+
+// 1. Font Variables
+
+$body-font: 'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
+$heading-font: 'Forza A', 'Forza B', Helvetica, Arial, sans-serif;
+
+
+// 2. Default Typography
+
+h1, h2, h3 {
+	
+	&.rule-divider {
+
+		&:after {
+			content: '';
+		    background-color: white;
+		    display: block;
+		    width: 235px;
+		    max-width: 65%;
+		    height: 2px;
+		}
+
+		&.black {
+			
+			&:after {
+		   		background-color: $black;
+
+			}
+		}
+
+		&.center {
+			
+			&:after {
+		    	margin-left: auto;
+		    	margin-right: auto;
+			}
+		}
+	}
+	
+	&.section-heading {
+		padding-bottom: 64px;
+		
+		@include mobile {
+			padding-bottom: 42px;
+		}
+	}
+}
+
+h1 {
+	@include font-size(48px);
+	font-family: $heading-font;
+	font-weight: 700;
+	line-height: 1.15;
+	margin: 0px 0px 15px 0px;
+	letter-spacing: 0.02em;
+
+	@include vertical {
+		@include font-size(40px);
+	}
+
+	@include mobile {
+		@include font-size(30px);
+		margin: 0 0 10px 0;
+		letter-spacing: 0;
+		font-weight: 700;
+	}
+	
+	@include mobile-small {
+		@include font-size(24px);
+	}
+	
+	&.rule-divider {
+		margin: 0px 0px 10px 0px;
+		
+		&:after {
+			margin: .6em 0 .5em 0;
+		}
+	}
+}
+
+h2 {
+	@include font-size(32px);
+	font-family: $heading-font;
+	font-weight: 300;
+	line-height: 1.25;
+	margin: 0 0 15px 0;
+
+	@include mobile {
+		@include font-size(24px);
+	}
+	
+	&.rule-divider {
+		
+		&:after {
+			margin: .7em 0;
+		}
+	}
+
+	&.alternate-uppercase {
+		@include font-size(24px);
+		font-family: $body-font;
+		font-weight: 500;
+		text-transform: uppercase;
+
+		@include mobile {
+			@include font-size(20px);
+		}
+	}
+}
+
+
+h3 {
+	@include font-size(20px);
+	font-family: $heading-font;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 5px 0;
+
+	@include mobile {
+		@include font-size(18px);
+	}
+}
+
+h4 {
+	@include font-size(16px);
+	font-weight: 500;
+	line-height: 1.25;
+	margin: 0;
+
+	@include mobile {
+		@include font-size(16px);
+	}
+	
+	&.rule-divider {
+		
+		&:after {
+			margin: .7em 0;
+		}
+	}
+	
+	a {
+		text-decoration: none;
+		color: $blue;
+	}
+}
+
+h5 {
+	@include font-size(14px);
+	font-weight: 300;
+	line-height: 1.15;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin: 0 0 15px 0;
+}
+
+h6 {
+	@include font-size(12px);
+	font-weight: 500;
+	line-height: 1.15;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+p, li {
+	@include font-size(16px);
+	font-weight: 300;
+	line-height: 1.5;
+
+	@include mobile {
+		@include font-size(15px);
+	}
+
+	&.smaller {
+		@include font-size(15px);
+		font-weight: 400;
+		
+		@include mobile {
+  			@include font-size(14px);
+  		}
+	}
+
+	&.intro {
+		@include font-size(18px);
+		
+		@include mobile {
+  			@include font-size(17px);
+  		}
+	}
+
+	&.caption {
+		@include font-size(12px);
+		font-style: italic;
+		padding-top: 10px;
+		
+		@include mobile {
+			@include font-size(11px);
+		}
+	}
+}
+
+p, ul {
+	margin: 0 0 15px 0;
+}
+
+li {
+	position: relative;
+	margin: 0 0 7px 0;
+	padding-left: 12px;
+
+	&:before {
+	  	content:"";
+		display: block;
+		position: absolute;
+		top: 8px;
+		left: 0;
+		width: 4px;
+		height: 4px;
+		background: $black;
+		@include border-radius(50%);
+	}
+}
+
+a {
+	color: $blue;
+	@include transition(color .25s ease);
+	
+	&:hover{
+		color: shade($blue, 20%);
+	}
+}
+
+strong {
+	font-weight: 500;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+	border: 0;
+	outline: 0;
+	margin: 1em auto;
+
+	@include mobile {
+		margin: 24px auto;
+	}
+
+	&.light-hr {
+		background: $ltgray;
+	}
+
+	&.dark-hr {
+		background: $dkgray;
+	}
+}
+
+blockquote {
+	display: inline-block;
+	width: 100%;
+	@include font-size(24px);
+	font-family: $heading-font;
+	font-weight: 300;
+	line-height: 1.6;
+	color: $black;
+	padding: 10px 0 10px 24px;
+	margin: 20px 0;
+	border-left: 2px solid $blue;
+
+	@include mobile {
+		@include font-size(19px);
+		padding: 10px 0 10px 16px;
+	}
+
+	&:before {
+		content: "\201C";
+		display: inline-block;
+		height: 40px;
+		width: 100%;
+		color: $blue;
+		@include font-size(72px);
+		font-weight: 700;
+		line-height: 1;
+		overflow: hidden;
+	}
+
+	.caption {
+		padding-left: 0;
+	}
+}
+
+.center-align-text {
+	text-align: center;
+}
+
+.mobile-hidden-text {
+	
+	@include mobile {
+		display: none;
+	}
+}

@@ -1,0 +1,387 @@
+////////////////////////////////////
+// SE Sponsor Slider Section
+////////////////////////////////////
+
+/* found in Slider.js */
+
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    //overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: auto !important;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+@charset "UTF-8";
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -50px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+
+        &:before {
+        	display: none !important;
+        }
+
+        &.slick-active {
+        	button {
+        		background: $black;
+        	}
+        }
+
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+			width: 10px;
+			height: 10px;
+			margin: 0 4px;
+			background: rgba(255,255,255,0.6);
+			border-radius: 50%;
+			cursor: pointer;
+			transition: background .25s;
+
+			&:hover {
+				background: rgba(255,255,255,1);
+			}
+
+
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+
+    }
+}
+
+/* styles that we have written */
+
+
+.cs-slider-section {
+	position: relative;
+	margin-bottom: 45px;
+	background-color: $blue;
+	color: #fff;
+	text-align: center;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+	&:hover {
+
+		> .cs-slider-control.previous,
+		> .cs-slider-control.next {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.cs-earns-col,
+	.cs-story-col {
+		padding-top: 50px;
+	}
+
+	.cs-story-col {
+
+		@include landscape {
+			text-align: left;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	.cs-earns-wrapper {
+		display: table;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 66px 16px 16px;
+		border: 1px solid #fff;
+
+		@include vertical {
+			min-height: 180px;
+			max-width: 360px;
+			margin: 0 auto;
+		}
+	}
+
+	.cs-earns-number {
+		display: table-cell;
+		vertical-align: middle;
+
+		.earns-text {
+			@include font-size(14px);
+			font-weight: 500;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+
+		.dollar-text {
+			font-family: $heading-font;
+			@include font-size(42px);
+			font-weight: 300;
+			margin-bottom: 0;
+			line-height: 1.2;
+
+			&:before {
+				content: "$";
+				display: inline-block;
+				@include font-size(20px);
+				transform: translateY(-15px);
+			}
+
+			.dollar-suffix {
+				@include font-size(20px);
+			}
+		}
+	}
+
+	.cs-org-logo {
+		position: absolute;
+		left: 50%;
+		top: -50px;
+		width: 100px;
+		height: 100px;
+		margin-left: -50px;
+		padding: 6px;
+		background: #fff;
+		border-radius: 50%;
+		overflow: hidden;
+
+		@include mobile-medium {
+			top: -45px;
+			width: 90px;
+			height: 90px;
+			margin-left: -45px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.cs-slider-control {
+		position: absolute;
+		top: 50%;
+		width: 48px;
+		height: 48px;
+		margin-top: -24px;
+		@include font-size(18px);
+		line-height: 50px;
+		text-align: center;
+		@include background-opacity($black,0.1);
+		transition: all .25s;
+		cursor: pointer;
+
+		@include vertical {
+			display: none;
+		}
+
+		&:hover {
+			@include background-opacity($black,0.5);
+
+			> .icon-arrow-left-big {
+				transform: translateX(-4px);
+			}
+
+			> .icon-arrow-right-big {
+				transform: translateX(4px);
+			}
+		}
+
+		&.previous {
+			left: 0;
+			opacity: 0;
+			transform: translateX(-48px);
+		}
+
+		&.next {
+			right: 0;
+			opacity: 0;
+			transform: translateX(48px);
+		}
+
+		.icon-arrow-right-big,
+		.icon-arrow-left-big {
+			transform: translateX(0);
+			transition: transform .25s;
+		}
+	}
+
+	.cs-slider-menu {
+		padding-top: 48px;
+		text-align: center;
+
+		a {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: 0 4px;
+			background: rgba(255,255,255,0.6);
+			border-radius: 50%;
+			cursor: pointer;
+			transition: background .25s;
+
+			&:hover {
+				background: rgba(255,255,255,1);
+			}
+
+			&.active {
+				background: $black;
+			}
+		}
+	}
+}
+
+.cs-slider-wrapper {
+	overflow: hidden;
+	width: 100%;
+	padding-bottom: 50px;
+}
+
+.cs-slider-container {
+	width: 100%;
+
+}
+
